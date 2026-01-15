@@ -3,6 +3,8 @@ import streamlit as st
 from dotenv import load_dotenv
 from os import getenv
 
+st.set_page_config(page_title="Astronomy Picture of the Day", page_icon="🔭")
+
 # Make sure to create a .env file.
 load_dotenv()
 
