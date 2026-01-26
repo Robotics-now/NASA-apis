@@ -11,6 +11,5 @@ data = request.json()
 
 st.title('Astronomy picture of the day')
 st.subheader(data.get('title', 'No title available'))
-st.write(api_key)
 st.image(data.get('hdurl', None))
 st.write(data.get('explanation', 'No explanation available'))
