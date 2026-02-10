@@ -1,4 +1,4 @@
-import requests
+import requests as rq
 import streamlit as st
 from datetime import date, timedelta
 
