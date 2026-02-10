@@ -3,10 +3,10 @@ import streamlit as st
 from datetime import date, timedelta
 
 st.set_page_config(page_title="Astronomy Picture of the Day", page_icon="🔭")
+yesterday = (date.today() - timedelta(days=1)).isoformat()
 
 api_key = st.secrets["nasa"]["api_key"]
 api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&start_date={yesterday}'
-yesterday = (date.today() - timedelta(days=1)).isoformat()
 
 request = rq.get(api_url)
 data = request.json()
