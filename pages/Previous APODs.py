@@ -1,7 +1,5 @@
 import requests as rq
 import streamlit as st
-from dotenv import load_dotenv
-from os import getenv
 from datetime import date, timedelta
 
 load_dotenv()
@@ -14,7 +12,7 @@ if "date" not in st.session_state:
 def update_date():
     st.session_state["date"] = st.session_state.date_picker
 
-api_key = getenv('NASA_APOD_API_KEY')
+api_key = st.secrets["nasa"]["api_key"]
 formatted_date = st.session_state["date"].isoformat()
 api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&date={formatted_date}'
 
