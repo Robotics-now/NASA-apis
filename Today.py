@@ -18,10 +18,10 @@ if st.session_state.button == False:
     # regular APOD or today's picture
 
     st.title('Astronomy picture of the day')
-    st.subheader(data[1]['title'])
-    st.image(data[1]['hdurl'])
+    st.subheader(data[-1]['title'])
+    st.image(data[-1]['hdurl'])
     st.write("")
-    st.write(data[1]['explanation'])
+    st.write(data[-1]['explanation'])
     st.button("⇽ Yesterday's picture", on_click=lambda: st.session_state.update(button=True), key='button-y')
 
 if st.session_state.button == True:
