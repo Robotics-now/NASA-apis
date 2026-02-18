@@ -2,7 +2,6 @@ import requests as rq
 import streamlit as st
 from datetime import date, timedelta
 
-load_dotenv()
 yesterday = (date.today() - timedelta(days=1))
 
 if "date" not in st.session_state:
