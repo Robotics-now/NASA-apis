@@ -15,17 +15,31 @@ if "button" not in st.session_state:
     st.session_state.button = False
 
 if st.session_state.button == False:
-    # regular APOD or today's picture
+    # ---Regular APOD or today's picture---
+    try:
+        st.title('Astronomy picture of the day')
+        st.subheader(data[-1]['title'])
+        st.image(data[-1]['hdurl'])
+        st.write("")
+        st.write(data[-1]['explanation'])
+        st.button("⇽ Yesterday's picture", on_click=lambda: st.session_state.update(button=True), key='button-y')
 
-    st.title('Astronomy picture of the day')
-    st.subheader(data[-1]['title'])
-    st.image(data[-1]['hdurl'])
-    st.write("")
-    st.write(data[-1]['explanation'])
-    st.button("⇽ Yesterday's picture", on_click=lambda: st.session_state.update(button=True), key='button-y')
+    except IndexError :
+    # ---Recalls the API for 1 day instead of 2---
+        
+        api_url_for_error = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&date={yesterday}'
+        request_for_error = rq.get(api_url_for_error)
+        data2 = request_for_error.json()
+
+        st.title('Astronomy picture of the day')
+        st.subheader(data2['title'])
+        st.image(data2['hdurl'])
+        st.write("")
+        st.write(data2['explanation'])
+        st.button("⇽ Yesterday's picture", on_click=lambda: st.session_state.update(button=True), key='button-y')
 
 if st.session_state.button == True:
-    # yesterday's picture
+    # ---Yesterday's picture if the usre clicks the button---
 
     st.title('Astronomy picture of the day')
     st.subheader(data[0]['title'])
