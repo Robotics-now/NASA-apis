@@ -2,8 +2,6 @@ import requests as rq
 import streamlit as st
 from datetime import date, timedelta
 
-
-load_dotenv()
 yesterday = (date.today() - timedelta(days=1)).isoformat()
 today = date.today().isoformat()
 
