@@ -1,15 +1,12 @@
 import requests as rq
 import streamlit as st
-from dotenv import load_dotenv
-from os import getenv, path
 from datetime import date, timedelta
 
 
-load_dotenv()
 yesterday = (date.today() - timedelta(days=1)).isoformat()
 today = date.today().isoformat()
 
-api_key = getenv('NASA_APOD_API_KEY')
+api_key = st.secrets["nasa"]["api_key"]
 api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
 
 request = rq.get(api_url)
