@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from urllib.parse import urlparse
 import os
 
-st.set_page_config(page_title='Today's APOD', page_icon='https://github.com/Robotics-now/robotics-now/blob/main/assets/Logo_new.png')
+st.set_page_config(page_title="Today's APOD', page_icon='https://github.com/Robotics-now/robotics-now/blob/main/assets/Logo_new.png")
 
 api_key = st.secrets["nasa"]["api_key"]
 api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
