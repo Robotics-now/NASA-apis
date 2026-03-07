@@ -38,6 +38,7 @@ if image_type == 'image':
         col1, col2,  = st.columns(2)
         
         with col1:
+            st.write('')
             st.page_link('pages/Previous APODs.py', label='⇽Previous APODs')
         with col2:
             st.download_button(
@@ -57,6 +58,7 @@ elif image_type == 'video':
         col1, col2,  = st.columns(2)
         
         with col1:
+            st.write('')
             st.page_link('pages/Previous APODs.py', label='⇽Previous APODs')
         with col2:
             st.download_button(
