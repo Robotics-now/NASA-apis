@@ -15,7 +15,7 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
 request = rq.get(api_url)
 data = request.json()
 
-
+# -- Makes sure the 'hdurl' key exists, if not is gets the 'url' key from the api --
 try:
     title = data['title']
     url = data['hdurl']
@@ -27,12 +27,14 @@ except KeyError:
     explanation = data['explanation']
 
 img_data = rq.get(url).content
+
+# -- Gets the file extension of the url --
 parsed_url = urlparse(url)
 path = parsed_url.path 
 file_base, file_extension = os.path.splitext(path)
 
 
-
+# -- If the media is a image --
 if image_type == 'image':
     st.title('Astronomy picture of the day')
     st.subheader(title)
@@ -53,6 +55,7 @@ if image_type == 'image':
             mime="image/jpeg"
     )
 
+# -- If the media is a video --
 elif image_type == 'video':
     st.title('Astronomy picture of the day')
     st.subheader(title)
