@@ -1,6 +1,5 @@
 import requests as rq
 import streamlit as st
-
 from datetime import date, timedelta
 
 yesterday = (date.today() - timedelta(days=1))
@@ -25,8 +24,10 @@ try:
     url = data['hdurl']
 except KeyError:
     url = data['url']
-img_data = rq.get(url).content
 
+img_data = rq.get(url).content
+path = parsed_url.path 
+file_base, file_extension = os.path.splitext(path)
 
 if data['media_type'] == 'image':
     title = st.empty()
@@ -52,7 +53,7 @@ if data['media_type'] == 'image':
         st.download_button(
             label="Download Image",
             data=img_data,  # This sends the actual image bytes
-            file_name=f"{data['date']}.jpg",
+            file_name=f"{data['date']}{file_extension}",
             mime="image/jpeg"
 )
 
@@ -80,6 +81,6 @@ if data['media_type'] == 'video':
         st.download_button(
             label="Download Image",
             data=img_data,  # This sends the actual image bytes
-            file_name=f"{data['date']}.jpg",
+            file_name=f"{data['date']}{file_extension}",
             mime="image/jpeg"
     )
