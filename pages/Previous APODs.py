@@ -4,8 +4,9 @@ from datetime import date, timedelta
 from urllib.parse import urlparse
 import os
 
-yesterday = (date.today() - timedelta(days=1))
+st.set_page_config(page_title='Previos APOD', page_icon='🔭')
 
+yesterday = (date.today() - timedelta(days=1))
 
 if "date" not in st.session_state:
     st.session_state["date"] = yesterday
