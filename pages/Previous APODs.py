@@ -28,11 +28,14 @@ except KeyError:
     url = data['url']
 
 img_data = rq.get(url).content
+
+# -- Gets the file extension of the url --
 parsed_url = urlparse(url)
 path = parsed_url.path 
 file_base, file_extension = os.path.splitext(path)
 
 
+# -- If the media is a image --
 if data['media_type'] == 'image':
     title = st.empty()
     title = (st.title(f'Astronomy picture of {data["date"]}') ,st.subheader(data['title']))
@@ -61,6 +64,7 @@ if data['media_type'] == 'image':
             mime="image/jpeg"
 )
 
+# -- If the media is a video --
 if data['media_type'] == 'video':
     title = st.empty()
     title = (st.title(f'Astronomy picture of {data["date"]}') ,st.subheader(data['title']))
