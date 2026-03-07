@@ -4,8 +4,6 @@ from datetime import date, timedelta
 from urllib.parse import urlparse
 import os
 
-
-yesterday = (date.today() - timedelta(days=1)).isoformat()
 today = date.today().isoformat()
 
 
