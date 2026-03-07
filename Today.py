@@ -5,7 +5,6 @@ from datetime import date, timedelta
 
 yesterday = (date.today() - timedelta(days=1)).isoformat()
 today = date.today().isoformat()
-img_data = rq.get(url).content
 
 
 api_key = st.secrets["nasa"]["api_key"]
@@ -13,7 +12,7 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
 
 request = rq.get(api_url)
 data = request.json()
-url = ''
+
 
 try:
     title = data['title']
@@ -25,6 +24,7 @@ except KeyError:
     url = data['url']
     explanation = data['explanation']
 
+img_data = rq.get(url).content
 
 
 
