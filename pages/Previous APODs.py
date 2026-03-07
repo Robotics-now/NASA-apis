@@ -43,7 +43,7 @@ if data['media_type'] == 'image':
         st.write('')
         st.write('')
 
-        st.page_link('../nasa_APIs/Today.py', label='⇾Today\'s APOD')
+        st.page_link('Today.py', label='⇾Today\'s APOD')
     # Get the raw bytes directly from the URL
 
     with col3:  
