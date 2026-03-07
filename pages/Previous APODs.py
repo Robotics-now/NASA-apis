@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from urllib.parse import urlparse
 import os
 
-st.set_page_config(page_title='Previos APOD', page_icon='🔭')
+st.set_page_config(page_title='Previos APOD', page_icon='U+1F52D')
 
 yesterday = (date.today() - timedelta(days=1))
 
