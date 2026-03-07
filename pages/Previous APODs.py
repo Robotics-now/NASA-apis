@@ -1,6 +1,8 @@
 import requests as rq
 import streamlit as st
 from datetime import date, timedelta
+from urllib.parse import urlparse
+import os
 
 yesterday = (date.today() - timedelta(days=1))
 
