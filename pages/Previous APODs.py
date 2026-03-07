@@ -1,10 +1,8 @@
 import requests as rq
 import streamlit as st
-from dotenv import load_dotenv
-from os import getenv
+
 from datetime import date, timedelta
 
-load_dotenv()
 yesterday = (date.today() - timedelta(days=1))
 img_data = rq.get(url).content
 
