@@ -4,7 +4,6 @@ import streamlit as st
 from datetime import date, timedelta
 
 yesterday = (date.today() - timedelta(days=1))
-img_data = rq.get(url).content
 
 
 if "date" not in st.session_state:
@@ -21,6 +20,7 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&date={formatte
 
 request = rq.get(api_url)
 data = request.json()
+img_data = rq.get(url).content
 
 try:
     url = data['hdurl']
