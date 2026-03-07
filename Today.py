@@ -4,9 +4,6 @@ from datetime import date, timedelta
 from urllib.parse import urlparse
 import os
 
-today = date.today().isoformat()
-
-
 api_key = st.secrets["nasa"]["api_key"]
 api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
 
