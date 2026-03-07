@@ -13,6 +13,7 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
 
 request = rq.get(api_url)
 data = request.json()
+url = ''
 
 try:
     title = data['title']
