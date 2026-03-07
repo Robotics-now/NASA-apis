@@ -39,7 +39,7 @@ if data['media_type'] == 'image':
     st.image(url)
     st.divider()
     st.write(data['explanation'])
-    st.write(url)
+    st.write('')
     col1, col2, col3 = st.columns(3)
     
     with col1:
