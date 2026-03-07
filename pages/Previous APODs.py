@@ -28,8 +28,10 @@ except KeyError:
     url = data['url']
 
 img_data = rq.get(url).content
+parsed_url = urlparse(url)
 path = parsed_url.path 
 file_base, file_extension = os.path.splitext(path)
+
 
 if data['media_type'] == 'image':
     title = st.empty()
