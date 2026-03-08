@@ -89,7 +89,7 @@ if data['media_type'] == 'video':
         st.write('')
         st.write('')
         st.download_button(
-            label="Download Image",
+            label="Download Video",
             data=img_data,  # This sends the actual image bytes
             file_name=f"{data['date']}{file_extension}",
             mime="image/jpeg"
