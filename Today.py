@@ -68,7 +68,7 @@ elif image_type == 'video':
             st.page_link('pages/Previous APODs.py', label='⇽Previous APODs')
         with col2:
             st.download_button(
-            label="Download Image",
+            label="Download Video",
             data=img_data,  # This sends the actual image bytes
             file_name=f"{data['date']}{file_extension}",
             mime="image/jpeg"
