@@ -15,12 +15,10 @@ data = request.json()
 
 # -- Makes sure the 'hdurl' key exists, if not is gets the 'url' key from the api --
 try:
-    title = data['title']
     url = data['hdurl']
     explanation = data['explanation']
     image_type = data['media_type']
 except KeyError:
-    title = data['title']
     url = data['url']
     explanation = data['explanation']
 
@@ -35,7 +33,7 @@ file_base, file_extension = os.path.splitext(path)
 # -- If the media is a image --
 if image_type == 'image':
     st.title('Astronomy picture of the day')
-    st.subheader(title)
+    st.subheader(data['title'])
     st.image(url)
     st.write("")
     st.write(explanation)
