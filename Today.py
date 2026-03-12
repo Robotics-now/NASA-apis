@@ -16,10 +16,10 @@ data = request.json()
 # -- Makes sure the 'hdurl' key exists, if not is gets the 'url' key from the api --
 try:
     url = data['hdurl']
-    st.write(url)
     explanation = data['explanation']
     image_type = data['media_type']
 except KeyError:
+    st.write(url)
     url = data['url']
     explanation = data['explanation']
 
