@@ -16,6 +16,7 @@ data = request.json()
 # -- Makes sure the 'hdurl' key exists, if not is gets the 'url' key from the api --
 try:
     url = data['hdurl']
+    st.write(url)
     explanation = data['explanation']
     image_type = data['media_type']
 except KeyError:
@@ -35,7 +36,7 @@ if image_type == 'image':
     st.title('Astronomy picture of the day')
     st.subheader(data['title'])
     st.image(url)
-    st.write("")
+    st.write('')
     st.write(explanation)
     with st.container(border=True):
         col1, col2,  = st.columns(2)
