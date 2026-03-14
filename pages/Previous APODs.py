@@ -24,7 +24,10 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&date={formatte
 request = rq.get(api_url)
 data = request.json()
 
-try:
+try: 
+    if 'error' in data.keys():
+        st.error('The api ran into a error.')
+    else:  
     url = data['hdurl']
 except KeyError:
     url = data['url']
