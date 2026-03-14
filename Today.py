@@ -18,11 +18,11 @@ try:
     if 'error' in data.keys():
         st.error('The api ran into a error.')
     else:
-    url = data['hdurl']
-    print(f'Image/video url -> {url}')
-    explanation = data['explanation']
-    print(f'Explanation -> {explanation}')
-    image_type = data['media_type']
+        url = data['hdurl']
+        print(f'Image/video url -> {url}')
+        explanation = data['explanation']
+        print(f'Explanation -> {explanation}')
+        image_type = data['media_type']
 except KeyError:
     url = data['url']
     explanation = data['explanation']
