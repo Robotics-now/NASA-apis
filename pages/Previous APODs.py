@@ -28,7 +28,7 @@ try:
     if 'error' in data.keys():
         st.error('The api ran into a error.')
     else:  
-    url = data['hdurl']
+        url = data['hdurl']
 except KeyError:
     url = data['url']
 
