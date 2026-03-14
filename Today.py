@@ -17,6 +17,7 @@ data = request.json()
 try:
     if 'error' in data.keys():
         st.error('The api ran into a error.')
+    else:
     url = data['hdurl']
     print(f'Image/video url -> {url}')
     explanation = data['explanation']
