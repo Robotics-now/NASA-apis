@@ -15,6 +15,8 @@ data = request.json()
 
 # -- Makes sure the 'hdurl' key exists, if not is gets the 'url' key from the api --
 try:
+    if 'error' in data.keys():
+        st.error('The api ran into a error.')
     url = data['hdurl']
     print(f'Image/video url -> {url}')
     explanation = data['explanation']
