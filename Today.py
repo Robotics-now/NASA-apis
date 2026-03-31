@@ -27,6 +27,9 @@ except KeyError:
     url = data['url']
     explanation = data['explanation']
 
+# -- Extention bridge --    
+st.markdown(f'<div id="nasa-url-bridge" style="display:none">{url}</div>', unsafe_allow_html=True)
+
 img_data = rq.get(url).content
 
 # -- Gets the file extension of the url --
