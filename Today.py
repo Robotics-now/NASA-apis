@@ -23,6 +23,7 @@ try:
         explanation = data['explanation']
         print(f'Explanation -> {explanation}')
         image_type = data['media_type']
+        print(image_type)
 except KeyError:
     url = data['url']
     explanation = data['explanation']
