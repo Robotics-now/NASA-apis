@@ -67,7 +67,7 @@ if image_type == 'image':
 # -- If the media is a video --
 elif image_type == 'video':
     st.title('Astronomy picture of the day')
-    st.subheader(title)
+    st.subheader(data['title'])
     st.video(url)
     st.write("")
     st.write(explanation)
