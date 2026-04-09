@@ -28,6 +28,7 @@ try:
         print(image_type)
 except KeyError:
     print(data.keys())
+    image_type = data['media_type']
     url = data['url']
     explanation = data['explanation']
 
