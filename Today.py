@@ -13,6 +13,8 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
 request = rq.get(api_url)
 data = request.json()
 
+print('API data has been retrived.')
+
 # -- Makes sure the 'hdurl' key exists, if not is gets the 'url' key from the api --
 try:
     if 'error' in data.keys():
