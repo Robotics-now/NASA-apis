@@ -32,7 +32,7 @@ try:
 except KeyError:
     url = data['url']
 
-img_data = rq.get(api_url).content
+img_data = rq.get(url).content
 
 # -- Gets the file extension of the url --
 parsed_url = urlparse(url)
