@@ -25,7 +25,7 @@ request = rq.get(api_url)
 data = request.json()
 
 try: 
-    if 'error' in data.keys():
+    if 'error' in data.keys() or request.status_code != 200:
         st.error('The api ran into a error.')
     else:  
         url = data['hdurl']
