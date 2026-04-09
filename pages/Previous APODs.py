@@ -31,6 +31,7 @@ try:
         url = data['hdurl']
 except KeyError:
     print(data.keys())
+    st.write(data.keys())
     url = data['url']
 
 img_data = rq.get(url).content
