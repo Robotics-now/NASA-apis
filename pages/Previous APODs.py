@@ -23,7 +23,11 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&date={formatte
 
 request = rq.get(api_url)
 st.write(request)
-data = request.json()
+
+try: 
+    data = request.json()
+except JSONDecodeError:
+    st.error('The api failed to display json data.')
 
 try: 
     if 'error' in data.keys() or request.status_code != 200:
