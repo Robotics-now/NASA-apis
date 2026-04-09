@@ -22,6 +22,7 @@ api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&date={formatte
 
 
 request = rq.get(api_url)
+st.write(request)
 data = request.json()
 
 try: 
