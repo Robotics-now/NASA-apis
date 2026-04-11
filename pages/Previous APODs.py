@@ -25,7 +25,7 @@ request = rq.get(api_url)
 
 try: 
     data = request.json()
-except JSONDecodeError:
+except rq.exceptions.JSONDecodeError:
     yesterday_for_error = (date.today() - timedelta(days=2)).isoformat()
     api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}&date={yestarday_for_error}'
     request = rq.get(api_url)
